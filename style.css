@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/* 
+-----Varibles-----
+*/
+:root {
+    --clr-primary: rgb(60, 255, 0);
+    --clr-primary-light: rgb(193, 248, 202);
+    --clr--red: #FF6B6B;
+    --clr--blue: #292F36;
+    --clr--lightb: #4ECDC4;
+    --clr--grey: #C1CAD6;
+    --clr--white: #fff;
+    --ff-primary: 'Quicksand',
+        sans-serif;
+    --ff-secondary: 'PT Sans', sans-serif;
+    --transition: all 0.3s linear;
+    --letter-spacing: 0.25rem;
+    --radius: 0.5rem
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f5f9;
+    font-family:var(--ff-primary);
+}
+
+nav {
+    color: white;
+    background: var(--clr--red);
+    height: 80px;
+    width: 100%;
+    z-index: 2;
+}
+
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 80px;
+    font-weight: bold;
+}
+nav ol{
+    float:right;
+    margin-right: 20px;
+}
+
+nav ol li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ol li a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 5px;
+}
+nav a:hover{
+    background: var(--clr--lightb);
+    transition: .2s linear;
+}
+
+/* check button */
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check
+{
+    display: none;
+}
+
+@media (max-width:952px){
+    nav {
+        position: absolute;
+        }
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ol li a{
+        font-size: 15px;
+
+    }
+}
+
+@media (max-width:858px){
+    nav{
+        position: absolute;
+    }
+    .checkbtn{
+        display: block;
+    }
+    ol{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: var(--clr--blue);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition:all 0.3s ;
+    }
+    nav ol li{
+        display: block;   
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ol li a{
+        font-size: 20px;
+    }
+    nav a:hover{
+        background: var(--clr--lightb);
+        color: white;
+    }
+
+    #check:checked ~ ol{
+        left:0;
+    }
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+section .imageBox{
+    position: relative;
+    width:45%;
+    height: 100%;
+}
+section .imgBox:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section .imageBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .contentBox{
+    display: flex;
+    /* changed */
+    justify-content: center;
+    align-items: flex-start;
+    width: 55%;
+    height: 100%;
+}
+section .contentBox .formBox{
+    max-width: 80%;
+    max-height: 80vh;
+    /* changed */
+    margin-top:5rem;
+    
+}
+
+section .contentBox .formBox h2{
+    color: var(--clr--blue);
+    font-weight: 700;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid var(--clr--red);
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+section .contentBox .formBox .inputBox{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+section .contentBox .formBox .inputBox td{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #292F36;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+section .contentBox .formBox .inputBox input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid var(--clr--lightb);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #292F36;
+    background: transparent;
+    border-radius: 30px;
+}
+
+section .contentBox .formBox .remember{
+    margin-bottom: 10px;
+    color: #292F36;
+    font-size:14px;
+    font-weight: 400;
+}
+
+section .contentBox .formBox p {
+    margin-bottom: 10px;
+    color: #292F36;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.btn {
+    background: var(--clr--red);
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: all 0.2s;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    color: var(--clr--white);
+    background: var(--clr--lightb);
+}
+
+.done-btn {
+    background: var(--clr--red);
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0.4rem 0.4rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: all 0.2s;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.done-btn:hover {
+    color: var(--clr--white);
+    background: var(--clr--lightb);
+}
+
+a:visited{
+    color: white;
+}
+a:link{
+    color: white;
+}
+
+@media (max-width:858px){
+section .imageBox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+    }
+    section .contentBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+    }
+    section .contentBox .formBox {
+        width: 50%;
+        padding: 40px;
+        background: rgb(255 255 255 /0.92);
+        margin: 50px;
+    }
+}
+.wrapper{
+    /* changed */
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.list{
+    border: 1px solid var(--clr--lightb);
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1rem;
+    min-width: 300px;
+    /* changed */
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.list thead tr{
+    background-color: #4ECDC4;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.list th,
+.list td{
+    padding: 12px 15px;
+}
